@@ -1,0 +1,18 @@
+name: Build Nuitka Static Python
+
+on:
+    - workflow_dispatch
+
+jobs:
+  Build-Nuitka-Static:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: https://github.com/Nuitka/Nuitka-Python.git
+          ref: 3.9
+      - run: .\build.bat -x64
+      - uses: actions/upload-artifact@v4
+        with:
+          name: output
+          path: output
