@@ -5,7 +5,7 @@ on:
     - push
 
 jobs:
-  Build-Nuitka-Static:
+  Build:
     strategy:
       matrix:
         version:
