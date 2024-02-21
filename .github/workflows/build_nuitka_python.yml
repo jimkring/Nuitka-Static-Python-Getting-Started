@@ -21,7 +21,7 @@ jobs:
           repository: Nuitka/Nuitka-Python.git
           ref: 3.9
       - if: runner.os == 'Windows'
-        run: .\build.bat -x64
+        run: .\build.bat
       - if: runner.os == 'Linux'
         run: ./build.sh
       - if: runner.os == 'macOS'
