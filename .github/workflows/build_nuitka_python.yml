@@ -7,8 +7,12 @@ jobs:
   Build-Nuitka-Static:
     strategy:
       matrix:
-        version: [3.9, 3.11]
-        os: [ubuntu-latest, windows-latest]
+        version:
+          - 3.9
+          # - 3.11
+        os:
+          - ubuntu-latest
+          # - windows-latest
     runs-on: ${{matrix.os}}
     steps:
       - uses: actions/checkout@v4
