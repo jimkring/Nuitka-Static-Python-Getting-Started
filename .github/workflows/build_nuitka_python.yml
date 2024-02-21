@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          repository: https://github.com/Nuitka/Nuitka-Python.git
+          repository: Nuitka/Nuitka-Python.git
           ref: 3.9
       - run: .\build.bat -x64
       - uses: actions/upload-artifact@v4
