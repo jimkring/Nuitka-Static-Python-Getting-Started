@@ -1,4 +1,4 @@
-name: Build Nuitka Static Python
+name: Build
 
 on:
     - workflow_dispatch
