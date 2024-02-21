@@ -5,13 +5,22 @@ on:
 
 jobs:
   Build-Nuitka-Static:
+    strategy:
+      matrix:
+        version: [3.9, 3.11]
+        os: [ubuntu-latest, windows-latest]
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
         with:
           repository: Nuitka/Nuitka-Python.git
           ref: 3.9
-      - run: .\build.bat -x64
+      - if: runner.os == 'Windows'
+        run: .\build.bat -x64
+      - if: runner.os == 'Linux'
+        run: .\build.sh
+      - if: runner.os == 'macOS'
+        run: .\build.mac.sh
       - uses: actions/upload-artifact@v4
         with:
           name: output
