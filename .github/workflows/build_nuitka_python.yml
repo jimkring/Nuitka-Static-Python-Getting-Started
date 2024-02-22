@@ -10,18 +10,18 @@ jobs:
       matrix:
         version:
           - 3.9
-          # - 3.11
+          - 3.11
         os:
           - ubuntu-latest
-          # - windows-latest
-          # - macos-latest
+          - windows-latest
+          - macos-latest
     runs-on: ${{matrix.os}}
     steps:
       - uses: actions/checkout@v4
         with:
-          # repository: Nuitka/Nuitka-Python.git
-          repository: jimkring/Nuitka-Python.git
-          ref: 3.9
+          repository: Nuitka/Nuitka-Python.git
+          #repository: jimkring/Nuitka-Python.git
+          ref: ${{matrix.version}}
       - if: runner.os == 'Windows'
         run: .\build.bat
       - if: runner.os == 'Linux'
