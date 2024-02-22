@@ -1,8 +1,10 @@
 name: Build
 
 on:
-    - workflow_dispatch
-    - push
+    workflow_dispatch:
+    push:
+      paths:
+        - .github/workflows/build_nuitka_python.yml
 
 jobs:
   Build:
