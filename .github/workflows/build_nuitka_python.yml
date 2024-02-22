@@ -28,6 +28,7 @@ jobs:
       # - if: runner.os == 'Windows'
       #   uses: ilammy/msvc-dev-cmd@v1
       - if: runner.os == 'Windows'
+        shell: cmd
         run: |
           %comspec% /k "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Auxiliary\Build\vcvars64.bat"
           .\build.bat
