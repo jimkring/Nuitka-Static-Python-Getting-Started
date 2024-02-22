@@ -30,8 +30,8 @@ jobs:
         uses: ilammy/msvc-dev-cmd@v1
         with:
           arch: x64
-          toolset: 16.11
-          # vsversion: 2019
+          # toolset: 16.11
+          vsversion: 2019
 
       - if: runner.os == 'Windows'
         run: |
