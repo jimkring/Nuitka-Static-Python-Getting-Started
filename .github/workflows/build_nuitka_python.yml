@@ -33,4 +33,5 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: ${{matrix.version}}-${{matrix.os}}
-          path: output
+          path: /opt/nuitkapython39
+          #path: output
