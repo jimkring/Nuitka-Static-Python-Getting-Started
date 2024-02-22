@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           # repository: Nuitka/Nuitka-Python.git
-          repository: gabeklavans/Nuitka-Python.git
+          repository: jimkring/Nuitka-Python.git
           ref: 3.9
       - if: runner.os == 'Windows'
         run: .\build.bat
