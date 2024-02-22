@@ -34,7 +34,9 @@ jobs:
           .\build.bat
 
       - if: runner.os == 'Linux'
-        run: ./build.sh
+        run: |
+          ./build.sh
+          mkdir output && tar -czf output/nuitka-python39.tar.gz /opt/nuitka-python39
 
       - if: runner.os == 'macOS'
         run: ./build.mac.sh
