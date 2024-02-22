@@ -21,8 +21,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          #repository: Nuitka/Nuitka-Python.git
-          repository: jimkring/Nuitka-Python.git
+          repository: Nuitka/Nuitka-Python.git
+          #repository: jimkring/Nuitka-Python.git
           ref: ${{matrix.version}}
       - if: runner.os == 'Windows'
         run: .\build.bat
