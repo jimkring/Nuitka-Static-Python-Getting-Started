@@ -47,8 +47,8 @@ jobs:
 
       - if: runner.os == 'Linux'
         run: |
-          /opt/nuitka-python39/bin/python -m pip install nuitka ordered-set zstandard
-          /opt/nuitka-python39/bin/python -m nuitka --standalone hello_world.py
+          /opt/nuitka-python39/bin/python3.9 -m pip install nuitka ordered-set zstandard
+          /opt/nuitka-python39/bin/python3.9 -m nuitka --standalone hello_world.py
 
       - if: runner.os == 'macOS'
         run: ./build.mac.sh
