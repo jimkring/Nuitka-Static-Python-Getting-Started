@@ -25,8 +25,12 @@ jobs:
           #repository: jimkring/Nuitka-Python.git
           ref: ${{matrix.version}}
 
-      # - if: runner.os == 'Windows'
-      #   uses: ilammy/msvc-dev-cmd@v1
+      - if: runner.os == 'Windows'
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: x64
+          vsversion: 2019
+
       - if: runner.os == 'Windows'
         run: |
           &"C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Auxiliary\Build\vcvars64.bat"
