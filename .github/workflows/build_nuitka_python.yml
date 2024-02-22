@@ -15,8 +15,8 @@ jobs:
           #- jim-3.9-fix-integration
         os:
           - ubuntu-latest
-          # - windows-latest
-          - windows-2019
+          - windows-latest
+          # - windows-2019
           #- macos-latest
     runs-on: ${{matrix.os}}
     steps:
@@ -30,7 +30,8 @@ jobs:
         uses: ilammy/msvc-dev-cmd@v1
         with:
           arch: x64
-          vsversion: 2019
+          toolset: 16.11
+          # vsversion: 2019
 
       - if: runner.os == 'Windows'
         run: |
