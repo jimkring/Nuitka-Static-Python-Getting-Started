@@ -45,6 +45,11 @@ jobs:
           ./build.sh
           mkdir output && tar -czf output/nuitka-python39.tar.gz /opt/nuitka-python39
 
+      - if: runner.os == 'Linux'
+        run: |
+          /opt/nuitka-python39/bin/python -m pip install nuitka ordered-set zstandard
+          /opt/nuitka-python39/bin/python -m nuitka --standalone hello_world.py
+
       - if: runner.os == 'macOS'
         run: ./build.mac.sh
 
@@ -59,3 +64,9 @@ jobs:
         with:
           name: ${{matrix.version}}-${{matrix.os}}
           path: output
+
+      - if: runner.os == 'Linux'
+        uses: actions/upload-artifact@v4
+        with:
+          name: hello_world
+          path: hello_world.dist
